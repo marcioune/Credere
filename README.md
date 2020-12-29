@@ -14,7 +14,7 @@ A sonda aceita três comandos:
 * GD - girar 90 graus à direta
 * M - movimentar. Para cada comando M a sonda se move uma posição na direção à qual sua face está apontada.
 
-A sonda inicia no quadrante (x = 0, y = 0), o que se traduz como a casa mais inferior da esquerda; também inicia com a face para a direita. Se pudéssemos visualizar a posição inicial, seria:
+A sonda inicia no quadrante (x = 0, y = 0), o que se traduz como a casa mais inferior da esquerda, também inicia com a face para a direita. Se pudéssemos visualizar a posição inicial, seria:
 
 (0,4) | (1,4) | (2,4) | (3,4) | (4,4)
 --- | --- | --- | --- | ---
@@ -27,7 +27,7 @@ A sonda inicia no quadrante (x = 0, y = 0), o que se traduz como a casa mais inf
 * Indica a direção inicial da nossa sonda
 ```
 
-A intenção é controlar a sonda enviando a direção e quantidade de movimentos que ela deve executar. A resposta deve ser sua coordenada final caso o ponto se encontre dentro do quadrante, caso o ponto não possa ser alcançado a resposta deve ser um erro indicando que a posição é inválida. Para a execução do teste as dimensões de 5x5 pode ser usado.
+A intenção é controlar a sonda enviando a direção e quantidade de movimentos que ela deve executar. A resposta deve ser sua coordenada final caso o ponto se encontre dentro do quadrante, caso o ponto não possa ser alcançado a resposta deve ser um erro indicando que a posição é inválida. Para a execução do teste as dimensões de 5x5 será utilizado.
 
 ## Endpoints
 Existem três endpoints, um que envia a sonda para a posição inicial (0,0), outro recebe o(s) movimento(s) (aceita uma série de movimentos que a sonda pode executar) e responde com as coordenadas finais, caso o movimento seja válido ou erro caso o movimento seja inválido, e o terceiro responde apenas com as coordenadas atuais X e Y da sonda.

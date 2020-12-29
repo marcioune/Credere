@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ResetPosition">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetPositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetPositionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPosition">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetPositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPositionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPosition">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPositionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ResetPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetPosition" />
+  </wsdl:message>
+  <wsdl:message name="ResetPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPosition" />
+  </wsdl:message>
+  <wsdl:message name="SetPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPosition" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetPositionHttpGetIn" />
+  <wsdl:message name="ResetPositionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPositionHttpGetIn" />
+  <wsdl:message name="SetPositionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionHttpGetIn" />
+  <wsdl:message name="GetPositionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetPositionHttpPostIn" />
+  <wsdl:message name="ResetPositionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPositionHttpPostIn" />
+  <wsdl:message name="SetPositionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPositionHttpPostIn" />
+  <wsdl:message name="GetPositionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="SondaSoap">
+    <wsdl:operation name="ResetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reinicia/move a sonda para a posição inicial (x = 0, y = 0, face = Direita).</wsdl:documentation>
+      <wsdl:input message="tns:ResetPositionSoapIn" />
+      <wsdl:output message="tns:ResetPositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a movimentação da sonda através das coordenadas recebidas e retorna a descrição dos movimentos realizados.</wsdl:documentation>
+      <wsdl:input message="tns:SetPositionSoapIn" />
+      <wsdl:output message="tns:SetPositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtém a posição atual da sonda.</wsdl:documentation>
+      <wsdl:input message="tns:GetPositionSoapIn" />
+      <wsdl:output message="tns:GetPositionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SondaHttpGet">
+    <wsdl:operation name="ResetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reinicia/move a sonda para a posição inicial (x = 0, y = 0, face = Direita).</wsdl:documentation>
+      <wsdl:input message="tns:ResetPositionHttpGetIn" />
+      <wsdl:output message="tns:ResetPositionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a movimentação da sonda através das coordenadas recebidas e retorna a descrição dos movimentos realizados.</wsdl:documentation>
+      <wsdl:input message="tns:SetPositionHttpGetIn" />
+      <wsdl:output message="tns:SetPositionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtém a posição atual da sonda.</wsdl:documentation>
+      <wsdl:input message="tns:GetPositionHttpGetIn" />
+      <wsdl:output message="tns:GetPositionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SondaHttpPost">
+    <wsdl:operation name="ResetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reinicia/move a sonda para a posição inicial (x = 0, y = 0, face = Direita).</wsdl:documentation>
+      <wsdl:input message="tns:ResetPositionHttpPostIn" />
+      <wsdl:output message="tns:ResetPositionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza a movimentação da sonda através das coordenadas recebidas e retorna a descrição dos movimentos realizados.</wsdl:documentation>
+      <wsdl:input message="tns:SetPositionHttpPostIn" />
+      <wsdl:output message="tns:SetPositionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtém a posição atual da sonda.</wsdl:documentation>
+      <wsdl:input message="tns:GetPositionHttpPostIn" />
+      <wsdl:output message="tns:GetPositionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SondaSoap" type="tns:SondaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ResetPosition">
+      <soap:operation soapAction="http://tempuri.org/ResetPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPosition">
+      <soap:operation soapAction="http://tempuri.org/SetPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <soap:operation soapAction="http://tempuri.org/GetPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SondaSoap12" type="tns:SondaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ResetPosition">
+      <soap12:operation soapAction="http://tempuri.org/ResetPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPosition">
+      <soap12:operation soapAction="http://tempuri.org/SetPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <soap12:operation soapAction="http://tempuri.org/GetPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SondaHttpGet" type="tns:SondaHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ResetPosition">
+      <http:operation location="/ResetPosition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPosition">
+      <http:operation location="/SetPosition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <http:operation location="/GetPosition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SondaHttpPost" type="tns:SondaHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ResetPosition">
+      <http:operation location="/ResetPosition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPosition">
+      <http:operation location="/SetPosition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPosition">
+      <http:operation location="/GetPosition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Sonda">
+    <wsdl:port name="SondaSoap" binding="tns:SondaSoap">
+      <soap:address location="https://localhost:44326/Sonda.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SondaSoap12" binding="tns:SondaSoap12">
+      <soap12:address location="https://localhost:44326/Sonda.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SondaHttpGet" binding="tns:SondaHttpGet">
+      <http:address location="https://localhost:44326/Sonda.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SondaHttpPost" binding="tns:SondaHttpPost">
+      <http:address location="https://localhost:44326/Sonda.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

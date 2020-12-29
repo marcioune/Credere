@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Credere", "Credere.csproj", "{AA9D242B-50DE-4EAE-B9F0-027E55AAF724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Credere.Tests", "..\Credere.Tests\Credere.Tests.csproj", "{7586F2A5-53E5-438C-B451-9D27A5F1A7A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA9D242B-50DE-4EAE-B9F0-027E55AAF724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9D242B-50DE-4EAE-B9F0-027E55AAF724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9D242B-50DE-4EAE-B9F0-027E55AAF724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9D242B-50DE-4EAE-B9F0-027E55AAF724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7586F2A5-53E5-438C-B451-9D27A5F1A7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7586F2A5-53E5-438C-B451-9D27A5F1A7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7586F2A5-53E5-438C-B451-9D27A5F1A7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7586F2A5-53E5-438C-B451-9D27A5F1A7A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F68B7024-23CF-48A8-AB87-DED8E62AAEF7}
+	EndGlobalSection
+EndGlobal

@@ -102,32 +102,32 @@ namespace Credere
 
                     if (CheckValidMovement(movement))
                     {
-                        if (CanMove())
+                        if (movement.Equals("GE"))
                         {
-                            if (movement.Equals("GE"))
-                            {
-                                SetFace("GE");
+                            SetFace("GE");
 
-                                movementPerformed = "girou para a esquerda";
+                            movementPerformed = "girou para a esquerda";
 
-                                previousMove = movement;
-                            }
-                            else if (movement.Equals("GD"))
-                            {
-                                SetFace("GD");
+                            previousMove = movement;
+                        }
+                        else if (movement.Equals("GD"))
+                        {
+                            SetFace("GD");
 
-                                movementPerformed = "girou para a direita";
+                            movementPerformed = "girou para a direita";
 
-                                previousMove = movement;
-                            }
-                            else if (movement.Equals("M"))
+                            previousMove = movement;
+                        }
+                        else if (movement.Equals("M"))
+                        {
+                            if (CanMove())
                             {
                                 switch (GetFace())
                                 {
                                     case "D":
                                         y1AxisCounter++;
 
-                                        SetY(y1AxisCounter);
+                                        SetY(1);
                                         SetAllowedMovementsRight(GetAllowedMovementsRight() - 1);
                                         SetAllowedMovementsLeft(GetAllowedMovementsLeft() + 1);
 
@@ -140,7 +140,7 @@ namespace Credere
                                     case "E":
                                         y2AxisCounter++;
 
-                                        SetY(-y2AxisCounter);
+                                        SetY(-1);
                                         SetAllowedMovementsLeft(GetAllowedMovementsLeft() - 1);
                                         SetAllowedMovementsRight(GetAllowedMovementsRight() + 1);
 
@@ -153,7 +153,7 @@ namespace Credere
                                     case "C":
                                         x1AxisCounter++;
 
-                                        SetX(x1AxisCounter);
+                                        SetX(1);
                                         SetAllowedMovementsUp(GetAllowedMovementsUp() - 1);
                                         SetAllowedMovementsDown(GetAllowedMovementsDown() + 1);
 
@@ -166,7 +166,7 @@ namespace Credere
                                     case "B":
                                         x2AxisCounter++;
 
-                                        SetX(-x2AxisCounter);
+                                        SetX(-1);
                                         SetAllowedMovementsDown(GetAllowedMovementsDown() - 1);
                                         SetAllowedMovementsUp(GetAllowedMovementsUp() + 1);
 
@@ -180,10 +180,10 @@ namespace Credere
                                         break;
                                 }
                             }
-                        }
-                        else
-                        {
-                            throw new Exception(messageInvalidMove);
+                            else
+                            {
+                                throw new Exception(messageInvalidMove);
+                            }
                         }
                     }
                     else
@@ -204,6 +204,11 @@ namespace Credere
                     new
                     {
                         y = GetY().ToString()
+                    },
+
+                    new
+                    {
+                        face = GetFace()
                     },
 
                     new
@@ -377,7 +382,16 @@ namespace Credere
         /// <param name="value"></param>
         private void SetX(int value)
         {
-            Session["x"] = value;
+            int x = 0;
+
+            if (Session["x"] != null)
+            {
+                x = (int)Session["x"];
+            }
+
+            x = x + (1 * value);
+
+            Session["x"] = x;
         }
 
         /// <summary>
@@ -406,7 +420,16 @@ namespace Credere
         /// <param name="value"></param>
         private void SetY(int value)
         {
-            Session["y"] = value;
+            int y = 0;
+
+            if (Session["y"] != null)
+            {
+                y = (int)Session["y"];
+            }
+
+            y = y + (1 * value);
+
+            Session["y"] = y;
         }
 
         /// <summary>

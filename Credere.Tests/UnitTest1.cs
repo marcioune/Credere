@@ -129,6 +129,11 @@ namespace Credere.Tests
 
                     new
                     {
+                        face = "D"
+                    },
+
+                    new
+                    {
                         movementsPerformed = movementsPerformed
                     }
                 };

@@ -52,10 +52,13 @@ Resposta:
 {
     "position": [
         {
-            "x": "3"
+            "x": "6"
         },
         {
-            "y": "2"
+            "y": "3"
+        },
+        {
+            "face": "D"
         },
         {
             "movementsPerformed": [

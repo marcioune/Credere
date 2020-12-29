@@ -50,9 +50,22 @@ Resposta:
 
 ```
 {
-  x: 2,
-  y: 3,
-  movementsPerformed: { girou para a esquerda, se moveu 3 vez(es) no eixo Y, girou para a direita, se moveu 2 vez(es) no eixo X }
+    "position": [
+        {
+            "x": "3"
+        },
+        {
+            "y": "2"
+        },
+        {
+            "movementsPerformed": [
+                "girou para a esquerda",
+                "se moveu 3 vez(es) no eixo X",
+                "girou para a direita",
+                "se moveu 2 vez(es) no eixo Y"
+            ]
+        }
+    ]
 }
 ```
 
@@ -91,7 +104,7 @@ A resposta será:
 
 ```
 {
-  "error": "Um movimento inválido foi detectado, infelizmente a sonda ainda não possui a habilidade de voar."
+    "error": "Um movimento inválido foi detectado, infelizmente a sonda ainda não possui a habilidade de voar."
 }
 ```
 
@@ -110,7 +123,17 @@ A resposta será:
 
 ```
 {
-  position: { x: 3, y: 2, face: E }
+    "position": [
+        {
+            "x": "3"
+        },
+        {
+            "y": "2"
+        },
+        {
+            "face": "D"
+        }
+    ]
 }
 ```
 
@@ -127,6 +150,6 @@ A resposta será:
 
 ```
 {
-  message: Posição da sonda reiniciada com sucesso!
+    "message": "Posição da sonda reiniciada com sucesso!"
 }
 ```

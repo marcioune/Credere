@@ -38,15 +38,13 @@ Consideramos que um movimento para cima é o mesmo que dizer (x + 1, y) e um mov
 ### Endpoint: SetPosition
 Realiza a movimentação da sonda através das coordenadas recebidas e retorna a descrição dos movimentos realizados.
 
-Exemplo:
+Postman exemplo:
 
 ```
-{
-  movimentos: ['GE', 'M', 'M', 'M', 'GD', 'M', 'M']
-}
+http://credere-prod.us-west-2.elasticbeanstalk.com/Sonda.asmx/SetPosition?coordinates=GE,M,M,M,GD,M,M
 ```
 
-Resposta:
+A resposta será:
 
 ```
 {
@@ -70,12 +68,6 @@ Resposta:
         }
     ]
 }
-```
-
-Postman exemplo:
-
-```
-.../Sonda.asmx/SetPosition?coordinates=GE,M,M,M,GD,M,M
 ```
 
 A visualização da posição após esses movimentos seria a seguinte:
@@ -119,7 +111,7 @@ Obtém a posição atual da sonda.
 Postman exemplo:
 
 ```
-.../Sonda.asmx/GetPosition
+http://credere-prod.us-west-2.elasticbeanstalk.com/Sonda.asmx/GetPosition
 ```
 
 A resposta será:
@@ -146,7 +138,7 @@ Reinicia/move a sonda para a posição inicial (x = 0, y = 0, face = D).
 Postman exemplo:
 
 ```
-.../Sonda.asmx/ResetPosition
+http://credere-prod.us-west-2.elasticbeanstalk.com/Sonda.asmx/ResetPosition
 ```
 
 A resposta será:
